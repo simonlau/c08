@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 22:54:21 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/08 23:03:04 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/09 20:43:38 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 # define TRUE 1
 # define FALSE 0
 # define SUCCESS 0
-# define EVEN_MSG "I have an even number of arguments."
-# define ODD_MSG "I have an odd number of arguments."
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
 
-typedef	t_bool;
+# define EVEN(n) n % 2 == 0
 
-void	write(int fd, const void *buf, int nbytes);
+typedef int	t_bool;
+
+void		write(int fd, const void *buf, int nbytes);
 
 #endif
