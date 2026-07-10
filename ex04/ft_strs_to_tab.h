@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:42 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/09 22:57:42 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/10 09:44:30 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@ typedef struct s_stock_str
 	char	*str;
 	char	*copy;
 }			t_stock_str;
+
+t_stock_str	*ft_strs_to_tab(int ac, char **av);
 
 #endif

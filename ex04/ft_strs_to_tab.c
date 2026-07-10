@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/09 23:03:59 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/10 09:51:13 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*copy_str(char *str)
 
 	len = str_len(str);
 	result = malloc(sizeof(char) * len);
-	if (result)
+	if (result == NULL)
 	{
 		return (NULL);
 	}
@@ -42,10 +42,11 @@ static char	*copy_str(char *str)
 		*result = *str;
 		len--;
 	}
+	*result = '\0';
 	return (result);
 }
 
-struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
+t_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	int			i;
 	t_stock_str	*result;
