@@ -18,8 +18,7 @@ void	test_one(void)
 	assert(5 == result[0].size);
 	assert(av[0] == result[0].str);
 	assert(av[0] != result[0].copy);
-	printf("%s", result[0].copy);
-	// assert(strcmp(av[0], result[0].copy) == 0);
+	assert(strcmp(av[0], result[0].copy) == 0);
 }
 
 int	main(void)
