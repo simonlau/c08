@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/10 10:03:43 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/14 11:40:06 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,24 @@ static int	str_len(char *str)
 static char	*copy_str(char *str)
 {
 	int		len;
+	int		i;
 	char	*buffer;
 	char	*current_letter;
 
 	len = str_len(str);
-	buffer = malloc(sizeof(char) * len);
+	buffer = malloc(sizeof(*buffer) * len + 1);
 	if (buffer == NULL)
 	{
 		return (NULL);
 	}
 	current_letter = buffer;
-	while (len > 0)
+	i = 0;
+	while (i < len)
 	{
-		*current_letter = *str;
-		current_letter++;
-		str++;
-		len--;
+		current_letter[i] = str[i];
+		i++;
 	}
+	current_letter[i] = '\0';
 	return (buffer);
 }
 
@@ -58,7 +59,7 @@ t_stock_str	*ft_strs_to_tab(int ac, char **av)
 	{
 		return (NULL);
 	}
-	result = malloc(ac * sizeof(t_stock_str));
+	result = malloc(ac * sizeof(*result));
 	if (!result)
 	{
 		return (NULL);

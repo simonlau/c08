@@ -19,10 +19,30 @@ void	test_one(void)
 	assert(av[0] == result[0].str);
 	assert(av[0] != result[0].copy);
 	assert(strcmp(av[0], result[0].copy) == 0);
+	free(result[0].copy);
+}
+
+void	test_two(void)
+{
+	char		*av[] = {"simon", "lau"};
+	t_stock_str	*result;
+
+	result = ft_strs_to_tab(2, av);
+	assert(5 == result[0].size);
+	assert(av[0] == result[0].str);
+	assert(av[0] != result[0].copy);
+	assert(strcmp(av[0], result[0].copy) == 0);
+	free(result[0].copy);
+	assert(3 == result[1].size);
+	assert(av[1] == result[1].str);
+	assert(av[1] != result[1].copy);
+	assert(strcmp(av[1], result[1].copy) == 0);
+	free(result[1].copy);
 }
 
 int	main(void)
 {
 	test_invalid();
 	test_one();
+	test_two();
 }
