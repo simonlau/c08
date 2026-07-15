@@ -1,4 +1,4 @@
-#include "ft_strs_to_tab.h"
+#include "ft_stock_str.h"
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>

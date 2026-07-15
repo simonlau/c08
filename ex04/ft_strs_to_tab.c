@@ -6,11 +6,11 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/14 11:40:06 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/15 16:31:20 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strs_to_tab.h"
+#include "ft_stock_str.h"
 #include <stdlib.h>
 
 static int	str_len(char *str)
