@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/15 16:31:20 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/16 11:35:59 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,27 +50,42 @@ static char	*copy_str(char *str)
 	return (buffer);
 }
 
+void	free_existing_result(t_stock_str *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(arr[i].copy);
+		i++;
+	}
+	free(arr);
+}
+
 t_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
 	int			i;
 	t_stock_str	*result;
 
 	if (ac < 1)
-	{
 		return (NULL);
-	}
-	result = malloc(ac * sizeof(*result));
+	result = malloc((ac + 1) * sizeof(*result));
 	if (!result)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (i < ac)
 	{
 		result[i].size = str_len(av[i]);
 		result[i].str = av[i];
 		result[i].copy = copy_str(av[i]);
+		if (av[i] != NULL && result[i].copy == NULL)
+		{
+			free_existing_result(result, i);
+			return (NULL);
+		}
 		i++;
 	}
+	result[i].str = 0;
 	return (result);
 }

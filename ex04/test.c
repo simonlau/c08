@@ -20,6 +20,7 @@ void	test_one(void)
 	assert(av[0] != result[0].copy);
 	assert(strcmp(av[0], result[0].copy) == 0);
 	free(result[0].copy);
+	free(result);
 }
 
 void	test_two(void)
@@ -38,6 +39,7 @@ void	test_two(void)
 	assert(av[1] != result[1].copy);
 	assert(strcmp(av[1], result[1].copy) == 0);
 	free(result[1].copy);
+	free(result);
 }
 
 int	main(void)
