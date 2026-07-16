@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/16 11:35:59 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/16 14:39:51 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,14 @@ void	free_existing_result(t_stock_str *arr, int size)
 	i = 0;
 	while (i < size)
 	{
-		free(arr[i].copy);
+		if (arr[i].copy != NULL)
+		{
+			free(arr[i].copy);
+		}
+		if (arr[i].str != NULL)
+		{
+			free(arr[i].str);
+		}
 		i++;
 	}
 	free(arr);
@@ -77,9 +84,9 @@ t_stock_str	*ft_strs_to_tab(int ac, char **av)
 	while (i < ac)
 	{
 		result[i].size = str_len(av[i]);
-		result[i].str = av[i];
+		result[i].str = copy_str(av[i]);
 		result[i].copy = copy_str(av[i]);
-		if (av[i] != NULL && result[i].copy == NULL)
+		if (av[i] != NULL && (result[i].copy == NULL || result[i].str == NULL))
 		{
 			free_existing_result(result, i);
 			return (NULL);

@@ -16,8 +16,9 @@ void	test_one(void)
 
 	result = ft_strs_to_tab(1, av);
 	assert(5 == result[0].size);
-	assert(av[0] == result[0].str);
+	assert(av[0] != result[0].str);
 	assert(av[0] != result[0].copy);
+	assert(strcmp(av[0], result[0].str) == 0);
 	assert(strcmp(av[0], result[0].copy) == 0);
 	free(result[0].copy);
 	free(result);
@@ -30,13 +31,15 @@ void	test_two(void)
 
 	result = ft_strs_to_tab(2, av);
 	assert(5 == result[0].size);
-	assert(av[0] == result[0].str);
+	assert(av[0] != result[0].str);
 	assert(av[0] != result[0].copy);
+	assert(strcmp(av[0], result[0].str) == 0);
 	assert(strcmp(av[0], result[0].copy) == 0);
 	free(result[0].copy);
 	assert(3 == result[1].size);
-	assert(av[1] == result[1].str);
+	assert(av[1] != result[1].str);
 	assert(av[1] != result[1].copy);
+	assert(strcmp(av[1], result[1].str) == 0);
 	assert(strcmp(av[1], result[1].copy) == 0);
 	free(result[1].copy);
 	free(result);
