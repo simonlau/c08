@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/18 15:57:13 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/20 10:05:47 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*copy_str(char *str)
 	char	*current_letter;
 
 	len = str_len(str);
-	buffer = malloc(sizeof(*buffer) * len + 1);
+	buffer = malloc(sizeof(*buffer) * (len + 1));
 	if (buffer == NULL)
 	{
 		return (NULL);
