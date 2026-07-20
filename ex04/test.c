@@ -6,7 +6,14 @@
 
 void	test_invalid(void)
 {
-	assert(NULL == ft_strs_to_tab(0, NULL));
+	t_stock_str	*result;
+
+	result = ft_strs_to_tab(0, NULL);
+	assert(NULL != result);
+	assert(0 == result[0].size);
+	assert(0 == result[0].str);
+	assert(0 == result[0].copy);
+	free(result);
 }
 
 void	test_one(void)

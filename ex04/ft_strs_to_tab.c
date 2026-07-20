@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/09 22:57:32 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/20 10:05:47 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/20 12:28:52 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ t_stock_str	*ft_strs_to_tab(int ac, char **av)
 	int			i;
 	t_stock_str	*result;
 
-	if (ac < 1)
-		return (NULL);
 	result = malloc((ac + 1) * sizeof(*result));
 	if (!result)
 		return (NULL);
