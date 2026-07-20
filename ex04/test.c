@@ -20,6 +20,7 @@ void	test_one(void)
 	assert(av[0] != result[0].copy);
 	assert(strcmp(av[0], result[0].str) == 0);
 	assert(strcmp(av[0], result[0].copy) == 0);
+	free(result[0].str);
 	free(result[0].copy);
 	assert(0 == result[1].size);
 	assert(0 == result[1].str);
@@ -38,12 +39,14 @@ void	test_two(void)
 	assert(av[0] != result[0].copy);
 	assert(strcmp(av[0], result[0].str) == 0);
 	assert(strcmp(av[0], result[0].copy) == 0);
+	free(result[0].str);
 	free(result[0].copy);
 	assert(3 == result[1].size);
 	assert(av[1] != result[1].str);
 	assert(av[1] != result[1].copy);
 	assert(strcmp(av[1], result[1].str) == 0);
 	assert(strcmp(av[1], result[1].copy) == 0);
+	free(result[1].str);
 	free(result[1].copy);
 	assert(0 == result[2].size);
 	assert(0 == result[2].str);
